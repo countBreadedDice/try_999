@@ -1,12 +1,45 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import initIsotope from "../../common/initIsotope";
 
 const Portfolio = ({ grid, filterPosition }) => {
   React.useEffect(() => {
     setTimeout(() => {
-      initIsotope();
+      var grid = document.querySelectorAll(".gallery");
+      var iso;
+      if (grid.length >= 1) {
+        grid.forEach((item) => {
+          iso = new Isotope(item, {
+            itemSelector: ".items",
+          });
+        });
+      }
+
+      var filtersElem = document.querySelector(".filtering");
+      if (filtersElem) {
+        filtersElem.addEventListener("click", function (event) {
+          if (!matchesSelector(event.target, "span")) {
+            return;
+          }
+          var filterValue = event.target.getAttribute("data-filter");
+          filterValue = filterValue;
+          iso.arrange({ filter: filterValue });
+        });
+        var buttonGroups = document.querySelectorAll(".filtering");
+        for (var i = 0, len = buttonGroups.length; i < len; i++) {
+          var buttonGroup = buttonGroups[i];
+          radioButtonGroup(buttonGroup);
+        }
+        function radioButtonGroup(buttonGroup) {
+          buttonGroup.addEventListener("click", function (event) {
+            if (!matchesSelector(event.target, "span")) {
+              return;
+            }
+            buttonGroup.querySelector(".active").classList.remove("active");
+            event.target.classList.add("active");
+          });
+        }
+      }
     }, 1000);
   }, []);
   return (
@@ -58,7 +91,7 @@ const Portfolio = ({ grid, filterPosition }) => {
               data-wow-delay=".4s"
             >
               <div className="item-img">
-                <Link href={`/project-details2/project-details2-dark`}>
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/portfolio/1/1.jpg" alt="image" />
                     <div className="item-img-overlay"></div>
@@ -68,7 +101,7 @@ const Portfolio = ({ grid, filterPosition }) => {
               <div className="cont">
                 <h6>Creativity Demand</h6>
                 <span>
-                  <Link href="/works/works-dark">Design</Link>, <Link href="/works/works-dark">WordPress</Link>
+                  <a href="#0">Design</a>, <a href="#0">WordPress</a>
                 </span>
               </div>
             </div>
@@ -84,7 +117,7 @@ const Portfolio = ({ grid, filterPosition }) => {
               data-wow-delay=".4s"
             >
               <div className="item-img">
-                <Link href={`/project-details2/project-details2-dark`}>
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/portfolio/1/2.jpg" alt="image" />
                     <div className="item-img-overlay"></div>
@@ -110,7 +143,7 @@ const Portfolio = ({ grid, filterPosition }) => {
               data-wow-delay=".4s"
             >
               <div className="item-img">
-                <Link href={`/project-details2/project-details2-dark`}>
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/portfolio/1/3.jpg" alt="image" />
                     <div className="item-img-overlay"></div>
@@ -136,7 +169,7 @@ const Portfolio = ({ grid, filterPosition }) => {
               data-wow-delay=".4s"
             >
               <div className="item-img">
-                <Link href={`/project-details2/project-details2-dark`}>
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/portfolio/1/4.jpg" alt="image" />
                     <div className="item-img-overlay"></div>
@@ -162,7 +195,7 @@ const Portfolio = ({ grid, filterPosition }) => {
               data-wow-delay=".4s"
             >
               <div className="item-img">
-                <Link href={`/project-details2/project-details2-dark`}>
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/portfolio/1/5.jpg" alt="image" />
                     <div className="item-img-overlay"></div>
@@ -188,7 +221,7 @@ const Portfolio = ({ grid, filterPosition }) => {
               data-wow-delay=".4s"
             >
               <div className="item-img">
-                <Link href={`/project-details2/project-details2-dark`}>
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/portfolio/1/6.jpg" alt="image" />
                     <div className="item-img-overlay"></div>

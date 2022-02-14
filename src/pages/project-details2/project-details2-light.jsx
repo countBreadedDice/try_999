@@ -9,7 +9,6 @@ import ProjectGallery from "../../components/Project-gallery/project-gallery";
 import ProjectDescription from "../../components/Project-description/project-description";
 import ProjectVideo from "../../components/Project-video/project-video";
 import NextProject from "../../components/Next-project/next-project";
-import appData from '../../data/app.json'
 
 const ProjectDetails2Light = () => {
   const navbarRef = React.useRef(null);
@@ -26,16 +25,14 @@ const ProjectDetails2Light = () => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
         navbar.classList.add("nav-scroll");
-        logo.setAttribute("src", appData.darkLogo);
       } else {
         navbar.classList.remove("nav-scroll");
-        logo.setAttribute("src", appData.lightLogo);
       }
     });
   }, [navbarRef]);
   return (
     <LightTheme>
-      <Navbar nr={navbarRef} lr={logoRef} />
+      <Navbar nr={navbarRef} lr={logoRef} theme="themeL" />
       <div className="wrapper">
         <ProjectDetails2Header projectHeaderData={ProjectDate} />
         <ProjectIntroduction projectIntroductionData={ProjectDate.intro} />

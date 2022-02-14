@@ -1,27 +1,45 @@
 import React from "react";
-import Link from "next/link";
 import introData from "../../data/sections/intro.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import SwiperCore, { Navigation, Pagination, Parallax } from "swiper";
+import SwiperCore, { Navigation, Pagination, Parallax} from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import removeSlashFromPagination from "../../common/removeSlashpagination";
-import fadeWhenScroll from "../../common/fadeWhenScroll";
 
 SwiperCore.use([Navigation, Pagination, Parallax]);
 
 const IntroWithSlider = ({ sliderRef }) => {
-  const [load, setLoad] = React.useState(true);
+
+  const [load, setLoad] = React.useState(true)
   React.useEffect(() => {
-    fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
     setTimeout(() => {
-      removeSlashFromPagination();
       setLoad(false);
-    }, 1000);
-  }, []);
+      if (document.querySelector(".swiper-pagination")) {
+        document.querySelector(".swiper-pagination").innerHTML = document
+          .querySelector(".swiper-pagination")
+          .innerHTML.replace(" / ", "");
+      }
+      window.addEventListener("scroll", () => {
+        var scrolled = window.pageYOffset;
+        if (document.querySelector(".fixed-slider .caption")) {
+          document.querySelector(".fixed-slider .caption").style.transform =
+            "translate3d(0, " + -(scrolled * 0.2) + "px, 0)";
+          document.querySelector(".fixed-slider .caption").style.opacity =
+            1 - scrolled / 600;
+        }
+        if (document.querySelector(".fixed-slider .capt .parlx")) {
+          document.querySelector(".fixed-slider .capt .parlx").style.transform =
+            "translate3d(0, " + -(scrolled * 0.2) + "px, 0)";
+          document.querySelector(".fixed-slider .capt .parlx").style.opacity =
+            1 - scrolled / 600;
+        }
+      });
+    })
+  }, [])
+
+
 
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
@@ -33,7 +51,7 @@ const IntroWithSlider = ({ sliderRef }) => {
       className="slider slider-prlx fixed-slider text-center"
     >
       <div className="swiper-container parallax-slider">
-        {!load ? (
+        {!load ?
           <Swiper
             speed={1000}
             parallax={true}
@@ -90,11 +108,9 @@ const IntroWithSlider = ({ sliderRef }) => {
                         <div className="caption center mt-30">
                           <h1 className="color-font">{slide.title}</h1>
                           {slide?.content && <p>{slide.content}</p>}
-                          <Link href="/about/about-dark">
-                            <a className="butn bord curve mt-30">
-                              <span>Look More</span>
-                            </a>
-                          </Link>
+                          <a href="#0" className="butn bord curve mt-30">
+                            <span>Look More</span>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -103,7 +119,8 @@ const IntroWithSlider = ({ sliderRef }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-        ) : null}
+          : null
+        }
         <div className="setone setwo">
           <div
             ref={navigationNextRef}

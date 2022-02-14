@@ -1,12 +1,10 @@
 import React from "react";
-import Link from "next/link";
 import caseStudyData from "../../data/sections/case-study.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, EffectFade } from "swiper";
 import "swiper/css/effect-fade";
 import "swiper/css";
 import "swiper/css/navigation";
-import removeSlashFromPagination from "../../common/removeSlashpagination";
 SwiperCore.use([Navigation, Pagination, EffectFade]);
 
 const CaseStudy = () => {
@@ -14,8 +12,12 @@ const CaseStudy = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setLoad(false);
-      removeSlashFromPagination();
-    }, 1000);
+      if (document.querySelector(".swiper-pagination")) {
+        document.querySelector(".swiper-pagination").innerHTML = document
+          .querySelector(".swiper-pagination")
+          .innerHTML.replace(" / ", "");
+      }
+    });
   }, []);
 
   const navigationPrevRef = React.useRef(null);
@@ -23,7 +25,6 @@ const CaseStudy = () => {
   const paginationRef = React.useRef(null);
   return (
     <section className="case-study">
-      <h2 style={{ display: "none" }}>&nbsp;</h2>
       <div
         id="content-carousel-container-unq-1"
         className="swiper-container"
@@ -81,13 +82,11 @@ const CaseStudy = () => {
               >
                 <div className="container d-flex align-items-end">
                   <div className="cont">
-                    <Link href="/showcase/showcase-dark">
-                      <a>
-                        <span>Case Study</span>
-                        <h6 className="main-color">{item.date}</h6>
-                        <h4>{item.title}</h4>
-                      </a>
-                    </Link>
+                    <a href="#">
+                      <span>Case Study</span>
+                      <h6 className="main-color">{item.date}</h6>
+                      <h4>{item.title}</h4>
+                    </a>
                   </div>
                 </div>
               </SwiperSlide>

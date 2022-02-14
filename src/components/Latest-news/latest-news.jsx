@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Link from "next/link";
 
 const LatestNews = () => {
   return (
-    <section className="blog section-padding" id="blog-arch">
+    <section className="blog section-padding" name="blog-archo">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
@@ -24,31 +23,25 @@ const LatestNews = () => {
               <div className="cont">
                 <div>
                   <div className="info">
-                    <Link href="/blog/blog-dark">
-                      <a className="date">
-                        <span>
-                          <i>06</i> August
-                        </span>
-                      </a>
-                    </Link>
+                    <a href="#0" className="date">
+                      <span>
+                        <i>06</i> August
+                      </span>
+                    </a>
                     <span>/</span>
-                    <Link href="/blog/blog-dark">
-                      <a className="tag">
-                        <span className="main-color">Architecture</span>
-                      </a>
-                    </Link>
+                    <a href="#0" className="tag">
+                      <span className="main-color">Architecture</span>
+                    </a>
                   </div>
                   <h5>
-                    <Link href="/blog-details/blog-details-dark">
-                      <a>
-                        How to use solid color combine with simple furnitures.
-                      </a>
-                    </Link>
+                    <a href="#0">
+                      How to use solid color combine with simple furnitures.
+                    </a>
                   </h5>
                   <div className="btn-more">
-                    <Link href="/blog-details/blog-details-dark">
-                      <a className="simple-btn main-color">Read More</a>
-                    </Link>
+                    <a href="#0" className="simple-btn main-color">
+                      Read More
+                    </a>
                   </div>
                 </div>
               </div>
@@ -62,31 +55,25 @@ const LatestNews = () => {
               <div className="cont">
                 <div>
                   <div className="info">
-                    <Link href="/blog/blog-dark">
-                      <a className="date">
-                        <span>
-                          <i>06</i> August
-                        </span>
-                      </a>
-                    </Link>
+                    <a href="#0" className="date">
+                      <span>
+                        <i>06</i> August
+                      </span>
+                    </a>
                     <span>/</span>
-                    <Link href="/blog/blog-dark">
-                      <a className="tag">
-                        <span className="main-color">Architecture</span>
-                      </a>
-                    </Link>
+                    <a href="#0" className="tag">
+                      <span className="main-color">Architecture</span>
+                    </a>
                   </div>
                   <h5>
-                    <Link href="/blog-details/blog-details-dark">
-                      <a>
-                        How to use solid color combine with simple furnitures.
-                      </a>
-                    </Link>
+                    <a href="#0">
+                      How to use solid color combine with simple furnitures.
+                    </a>
                   </h5>
                   <div className="btn-more">
-                    <Link href="/blog-details/blog-details-dark">
-                      <a className="simple-btn main-color">Read More</a>
-                    </Link>
+                    <a href="#0" className="simple-btn main-color">
+                      Read More
+                    </a>
                   </div>
                 </div>
               </div>

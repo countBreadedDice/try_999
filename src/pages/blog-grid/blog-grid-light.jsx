@@ -40,7 +40,7 @@ const BlogGridLight = () => {
         paragraph="All the most current news and events of our creative team."
       />
       <BlogGrid blogs={blog3Data} />
-      <Footer />
+      <footer />
     </LightTheme>
   );
 };

@@ -12,8 +12,8 @@ import NavbarArch from "../../components/Navbar-arch/navbar-arch";
 import LatestNews from "../../components/Latest-news/latest-news";
 import WorksStyle5 from "../../components/Works-style5/works-style5";
 import FooterArch from "../../components/Footer-arch/footer-arch.jsx";
-import ContactArch from "../../components/Contact-arch/contact-arch";
-import TestimonialsArch from "../../components/Testimonials-arch/testimonials-arch";
+import ContactArcho from "../../components/Contact-archo/contact-archo";
+import TestimonialsArcho from "../../components/Testimonials-archo/testimonials-archo";
 
 const Homepage = () => {
   const navbarRef = React.useRef(null);
@@ -35,6 +35,7 @@ const Homepage = () => {
   return (
     <>
       <Head>
+        <link rel="stylesheet" defer href="/css/arch-skin-dark.css" />
         <link
           href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
@@ -44,7 +45,7 @@ const Homepage = () => {
           rel="stylesheet"
         />
       </Head>
-      <DarkTheme useSkin>
+      <DarkTheme>
         <NavbarArch navbarRef={navbarRef} />
         <Intro5 />
         <AboutUs6 />
@@ -52,9 +53,9 @@ const Homepage = () => {
         <WorksStyle5 />
         <CaseStudy />
         <Team3 />
-        <TestimonialsArch />
+        <TestimonialsArcho />
         <LatestNews />
-        <ContactArch />
+        <ContactArcho />
         <FooterArch />
       </DarkTheme>
     </>

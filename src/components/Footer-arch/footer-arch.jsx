@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import appData from '../../data/app.json'
 
 const FooterArch = () => {
   return (
@@ -52,7 +51,7 @@ const FooterArch = () => {
                       The Start-Up Ultimate Guide to Make Your WordPress
                       Journal.
                     </p>
-                    <span className="date main-color">14 sep 2022</span>
+                    <span className="date main-color">14 sep 2021</span>
                   </div>
                 </li>
                 <li>
@@ -64,7 +63,7 @@ const FooterArch = () => {
                       The Start-Up Ultimate Guide to Make Your WordPress
                       Journal.
                     </p>
-                    <span className="date main-color">14 sep 2022</span>
+                    <span className="date main-color">14 sep 2021</span>
                   </div>
                 </li>
                 <li>
@@ -79,7 +78,7 @@ const FooterArch = () => {
           <div className="col-lg-4">
             <div className="item">
               <div className="logo">
-                <img src={appData.lightLogo} alt="" />
+                <img src="/img/logo-light.png" alt="" />
               </div>
               <div className="social">
                 <a href="#0">
@@ -97,7 +96,7 @@ const FooterArch = () => {
               </div>
               <div className="copy-right">
                 <p>
-                  © 2022, Vie Template. Made with passion by
+                  © 2021, Vie Template. Made with passion by
                   <a href="#0" className="main-color">
                     ThemesCamp
                   </a>

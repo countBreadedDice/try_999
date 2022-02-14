@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Link from "next/link";
+import Link from 'next/link'
 import SwiperCore, {
   Navigation,
   Pagination,
@@ -13,8 +13,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import { thumparallax } from "../../../common/thumparallax";
-import removeSlashFromPagination from "../../../common/removeSlashpagination";
 
 SwiperCore.use([Navigation, Pagination, Parallax, EffectFade]);
 
@@ -23,8 +21,18 @@ const Blogs4 = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setLoad(false);
-      removeSlashFromPagination();
-      thumparallax();
+      if (document.querySelector(".swiper-pagination")) {
+        document.querySelector(".swiper-pagination").innerHTML = document
+          .querySelector(".swiper-pagination")
+          .innerHTML.replace(" / ", "");
+      }
+      var imageUp = document.getElementsByClassName("thumparallax");
+      if (imageUp) {
+        new simpleParallax(imageUp, {
+          delay: 1,
+          scale: 1.1,
+        });
+      }
     }, 1000);
   }, []);
 
@@ -34,7 +42,6 @@ const Blogs4 = () => {
 
   return (
     <section className="blog-crv sub-bg">
-      <h2 style={{ display: "none" }}>&nbsp;</h2>
       <div className="stories">
         <div className="container-fluid">
           <div className="row">
@@ -176,22 +183,20 @@ const Blogs4 = () => {
                     <div className="item wow fadeIn" data-wow-delay=".6s">
                       <div className="content">
                         <div className="tags">
-                          <Link href="/blog/blog-dark">Trending</Link>
+                          <a href="#0">Trending</a>
                         </div>
                         <div className="info">
-                          <Link href="/blog/blog-dark">
-                            <a>
-                              <i className="far fa-clock"></i>
-                              06 Aug 2022
-                            </a>
-                          </Link>
+                          <a href="#0">
+                            <i className="far fa-clock"></i>
+                            06 Aug 2019
+                          </a>
                           <a href="#0">by Alex Morgan</a>
                         </div>
                         <div className="title">
                           <h4>
-                            <Link href="/blog-details/blog-details-dark">
+                            <a href="#0">
                               Create The Lifestyle You Really Desire This World
-                            </Link>
+                            </a>
                           </h4>
                         </div>
                         <div className="text">
@@ -202,7 +207,7 @@ const Blogs4 = () => {
                           </p>
                         </div>
                         <div className="more">
-                          <Link href={`/blog-details/blog-details-dark`}>
+                          <Link href="/blog-details/blog-details-dark">
                             Read More
                           </Link>
                         </div>
@@ -213,22 +218,20 @@ const Blogs4 = () => {
                     <div className="item wow fadeIn" data-wow-delay=".6s">
                       <div className="content">
                         <div className="tags">
-                          <Link href="/blog/blog-dark">Trending</Link>
+                          <a href="#0">Trending</a>
                         </div>
                         <div className="info">
-                          <Link href="/blog/blog-dark">
-                            <a>
-                              <i className="far fa-clock"></i>
-                              06 Aug 2022
-                            </a>
-                          </Link>
+                          <a href="#0">
+                            <i className="far fa-clock"></i>
+                            06 Aug 2019
+                          </a>
                           <a href="#0">by Alex Morgan</a>
                         </div>
                         <div className="title">
                           <h4>
-                            <Link href="/blog-details/blog-details-dark">
-                              <a>List of The Best Investment Projects</a>
-                            </Link>
+                            <a href="#0">
+                              List of The Best Investment Projects
+                            </a>
                           </h4>
                         </div>
                         <div className="text">
@@ -239,7 +242,7 @@ const Blogs4 = () => {
                           </p>
                         </div>
                         <div className="more">
-                          <Link href={`/blog-details/blog-details-dark`}>
+                          <Link href="/blog-details/blog-details-dark">
                             Read More
                           </Link>
                         </div>
@@ -250,22 +253,18 @@ const Blogs4 = () => {
                     <div className="item wow fadeIn" data-wow-delay=".6s">
                       <div className="content">
                         <div className="tags">
-                          <Link href="/blog/blog-dark">Trending</Link>
+                          <a href="#0">Trending</a>
                         </div>
                         <div className="info">
-                          <Link href="/blog/blog-dark">
-                            <a>
-                              <i className="far fa-clock"></i>
-                              06 Aug 2022
-                            </a>
-                          </Link>
+                          <a href="#0">
+                            <i className="far fa-clock"></i>
+                            06 Aug 2019
+                          </a>
                           <a href="#0">by Alex Morgan</a>
                         </div>
                         <div className="title">
                           <h4>
-                            <Link href="/blog-details/blog-details-dark">
-                              <a>World Best Business Website Company</a>
-                            </Link>
+                            <a href="#0">World Best Business Website Company</a>
                           </h4>
                         </div>
                         <div className="text">
@@ -276,7 +275,7 @@ const Blogs4 = () => {
                           </p>
                         </div>
                         <div className="more">
-                          <Link href={`/blog-details/blog-details-dark`}>
+                          <Link href="/blog-details/blog-details-dark">
                             Read More
                           </Link>
                         </div>

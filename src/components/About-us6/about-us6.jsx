@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const AboutUs6 = () => {
     return (
-      <section id="about" className="about-ar section-padding">
+      <section name="about" className="about-ar section-padding">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 valign">
@@ -37,9 +37,7 @@ const AboutUs6 = () => {
                   consequat nibh, vitae interdum sit amet bibendum nisl.
                 </p>
 
-                <Link
-                  href={`/about/about-dark`}
-                >
+                <Link href="/about/about-dark">
                   <a className="butn bord mt-30">
                     <span>About Us</span>
                   </a>

@@ -17,10 +17,7 @@ const FreelancreIntro = () => {
               <h1 className="cd-headline clip">
                 Hello, My name is hisham i love design and i hope to make
                 awesome designs and also i create a
-                <span
-                  style={{ fontSize: "35px", lineHeight: "49px" }}
-                  className="cd-words-wrapper"
-                >
+                <span className="cd-words-wrapper">
                   <Typewriter
                     options={{
                       wrapperClassName: "color-font fw-600",

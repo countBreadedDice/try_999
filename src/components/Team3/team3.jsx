@@ -3,7 +3,7 @@ import React from "react";
 
 const Team3 = () => {
   return (
-    <section id="team-arch" className="team section-padding">
+    <section name="team-arch" className="team section-padding">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8 col-md-10">
@@ -21,7 +21,7 @@ const Team3 = () => {
             <div className="item cir md-mb50">
               <div className="img">
                 <img src="/img/team/a1.jpg" alt="" />
-                <div id="circle1">
+                <div id="circle">
                   <svg
                     version="1.1"
                     x="0px"
@@ -34,15 +34,15 @@ const Team3 = () => {
                   >
                     <defs>
                       <path
-                        id="circlePath1"
+                        id="circlePath"
                         d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
                       />
                     </defs>
                     <circle cx="150" cy="100" r="75" fill="none" />
                     <g>
-                      <use xlinkHref="#circlePath1" fill="none" />
+                      <use xlinkHref="#circlePath" fill="none" />
                       <text fill="#c5a47e" className="custom-font">
-                        <textPath xlinkHref="#circlePath1">
+                        <textPath xlinkHref="#circlePath">
                           CEO Manager - CEO Manager - CEO Manager -
                         </textPath>
                       </text>
@@ -60,7 +60,7 @@ const Team3 = () => {
             <div className="item cir md-mb50">
               <div className="img">
                 <img src="/img/team/a2.jpg" alt="" />
-                <div id="circle2">
+                <div id="circle">
                   <svg
                     version="1.1"
                     x="0px"
@@ -73,15 +73,15 @@ const Team3 = () => {
                   >
                     <defs>
                       <path
-                        id="circlePath2"
+                        id="circlePath"
                         d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
                       />
                     </defs>
                     <circle cx="150" cy="100" r="75" fill="none" />
                     <g>
-                      <use xlinkHref="#circlePath2" fill="none" />
+                      <use xlinkHref="#circlePath" fill="none" />
                       <text fill="#c5a47e" className="custom-font">
-                        <textPath xlinkHref="#circlePath2">
+                        <textPath xlinkHref="#circlePath">
                           Interior Designer Interior Designer Interior Designer
                         </textPath>
                       </text>
@@ -99,7 +99,7 @@ const Team3 = () => {
             <div className="item cir sm-mb50">
               <div className="img">
                 <img src="/img/team/a3.jpg" alt="" />
-                <div id="circle3">
+                <div id="circle">
                   <svg
                     version="1.1"
                     x="0px"
@@ -112,15 +112,15 @@ const Team3 = () => {
                   >
                     <defs>
                       <path
-                        id="circlePath3"
+                        id="circlePath"
                         d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
                       />
                     </defs>
                     <circle cx="150" cy="100" r="75" fill="none" />
                     <g>
-                      <use xlinkHref="#circlePath3" fill="none" />
+                      <use xlinkHref="#circlePath" fill="none" />
                       <text fill="#c5a47e" className="custom-font">
-                        <textPath xlinkHref="#circlePath3">
+                        <textPath xlinkHref="#circlePath">
                           Landscape Designer Landscape Designer Landscape
                           Designer
                         </textPath>

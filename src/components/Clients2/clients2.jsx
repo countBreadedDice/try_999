@@ -6,7 +6,6 @@ import Split from "../Split";
 const Clients2 = ({ theme }) => {
   return (
     <section className="clients sub-bg pt-50 pb-50">
-      <h2 style={{ display: "none" }}>&nbsp;</h2>
       <div className="container">
         <div className="row">
           <div className="col-lg-7">

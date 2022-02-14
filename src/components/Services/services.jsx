@@ -1,5 +1,6 @@
 import React from "react";
 import featuresData from "../../data/sections/features.json";
+import Tilt from 'react-parallax-tilt';
 
 const Services = ({ style, lines }) => {
   return (
@@ -13,10 +14,10 @@ const Services = ({ style, lines }) => {
           <div className="col-lg-8 col-md-10">
             <div className="sec-head  text-center">
               <h6 className="wow fadeIn" data-wow-delay=".5s">
-                Best Features
+                Servicii Complete de design și marketing
               </h6>
               <h3 className="wow color-font">
-                We are a new digital product development agency
+               Suntem o companie de publicitate și design care oferă servicii integrate complete
               </h3>
             </div>
           </div>
@@ -39,7 +40,9 @@ const Services = ({ style, lines }) => {
                 >
                   <div className="item-box">
                     <div>
-                      <span className={`icon ${feature.icon}`}></span>
+                    <Tilt>
+                      <span className={`icon ${feature.icon} color-font`}></span>
+                    </Tilt>
                     </div>
                     <div className="cont">
                       <h6>{feature.title}</h6>

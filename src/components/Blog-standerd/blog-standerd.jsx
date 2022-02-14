@@ -11,13 +11,11 @@ const BlogStanderd = ({ blogs }) => {
             <div className="posts">
               {blogs.map((blogItem, index) => (
                 <div
-                  className={`item ${
-                    index === blogs.length - 1 ? "" : "mb-80"
-                  }`}
+                  className={`item ${index === blogs.length - 1 ? "" : "mb-80"}`}
                   key={blogItem.id}
                 >
                   <div className="img">
-                    <Link href={`/blog-details/blog-details-dark`}>
+                    <Link href="/blog-details/blog-details-dark">
                       <a>
                         <img src={blogItem.image} alt="" />
                       </a>
@@ -26,7 +24,7 @@ const BlogStanderd = ({ blogs }) => {
                   <div className="content">
                     <div className="row justify-content-center">
                       <div className="col-10">
-                        <Link href={`/blog/blog-dark`}>
+                        <Link href="/blog/blog-dark">
                           <a className="date">
                             <span className="num">{blogItem.date.day}</span>
                             <span>{blogItem.date.month}</span>
@@ -34,18 +32,18 @@ const BlogStanderd = ({ blogs }) => {
                         </Link>
                         <div className="tags">
                           {blogItem.tags.map((tag, index) => (
-                            <Link key={index} href="/blog/blog-dark">
+                            <Link key={index} href="/">
                               {tag}
                             </Link>
                           ))}
                         </div>
                         <h4 className="title">
-                          <Link href={`/blog-details/blog-details-dark`}>
+                          <Link href="/blog-details/blog-details-dark">
                             {blogItem.title}
                           </Link>
                         </h4>
                         <p>{blogItem.content}</p>
-                        <Link href={`/blog-details/blog-details-dark`}>
+                        <Link href="/blog-details/blog-details-dark">
                           <a className="butn bord curve mt-30">Read More</a>
                         </Link>
                       </div>
@@ -55,13 +53,13 @@ const BlogStanderd = ({ blogs }) => {
               ))}
               <div className="pagination">
                 <span className="active">
-                  <Link href={`/blog/blog-dark`}>1</Link>
+                  <Link href="/blog/blog-dark">1</Link>
                 </span>
                 <span>
-                  <Link href={`/blog/blog-dark`}>2</Link>
+                  <Link href="/blog/blog-dark">2</Link>
                 </span>
                 <span>
-                  <Link href={`/blog/blog-dark`}>
+                  <Link href="/blog/blog-dark">
                     <a>
                       <i className="fas fa-angle-right"></i>
                     </a>

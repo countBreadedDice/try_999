@@ -5,7 +5,7 @@ import VisibilitySensor from "react-visibility-sensor";
 
 const Numbers2 = () => {
   React.useEffect(() => {
-    console.clear();
+    // console.clear();
   });
   return (
     <section className="block-sec section-padding">
@@ -16,7 +16,6 @@ const Numbers2 = () => {
               <div className="item md-mb50">
                 <span className="icon pe-7s-smile"></span>
                 <h3 className="custom-font">
-                  &nbsp;
                   <CountUp redraw={true} end={2400} duration="3">
                     {({ countUpRef, start }) => (
                       <VisibilitySensor onChange={start} delayedCall>
@@ -36,7 +35,6 @@ const Numbers2 = () => {
               <div className="item md-mb50">
                 <span className="icon pe-7s-portfolio"></span>
                 <h3 className="custom-font">
-                  &nbsp;
                   <CountUp redraw={true} end={133} duration="3">
                     {({ countUpRef, start }) => (
                       <VisibilitySensor onChange={start} delayedCall>
@@ -56,7 +54,6 @@ const Numbers2 = () => {
               <div className="item sm-mb50">
                 <span className="icon pe-7s-cloud-download"></span>
                 <h3 className="custom-font">
-                  &nbsp;
                   <CountUp redraw={true} end={254} duration="3">
                     {({ countUpRef, start }) => (
                       <VisibilitySensor onChange={start} delayedCall>
@@ -77,7 +74,6 @@ const Numbers2 = () => {
               <div className="item">
                 <span className="icon pe-7s-medal"></span>
                 <h3 className="custom-font">
-                  &nbsp;
                   <CountUp redraw={true} end={46} duration="3">
                     {({ countUpRef, start }) => (
                       <VisibilitySensor onChange={start} delayedCall>

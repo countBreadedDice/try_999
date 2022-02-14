@@ -1,13 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import cardMouseEffect from "../../common/cardMouseEffect";
-import { thumparallaxDown } from "../../common/thumparallax";
 
 const MinimalArea = () => {
   React.useEffect(() => {
-    cardMouseEffect(document.querySelectorAll(".feat .items"));
     setTimeout(() => {
-      thumparallaxDown();
+      var imageDown = document.getElementsByClassName("thumparallax-down");
+      if (imageDown) {
+        new simpleParallax(imageDown, {
+          orientation: "down",
+          delay: 1,
+          scale: 1.1,
+        });
+      }
     }, 1000);
   }, []);
   return (

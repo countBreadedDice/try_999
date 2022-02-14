@@ -30,10 +30,7 @@ const ShowcasesFullScreenCircleSlide = () => {
             parallax={true}
             centeredSlides={true}
             slidesPerView={1}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
+            autoplay={true}
             spaceBetween={500}
             navigation={{
               prevEl: navigationPrevRef.current,
@@ -87,23 +84,20 @@ const ShowcasesFullScreenCircleSlide = () => {
                     <div className="caption ontop valign">
                       <div className="o-hidden">
                         <h1 data-swiper-parallax="-2000">
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
+                          <Link href="/project-details2/project-details2-dark">
                             <a>
                               <div className="stroke">{slide.title.first}</div>
                               <span>{slide.title.second}</span>
                             </a>
                           </Link>
+                          
                         </h1>
                       </div>
                     </div>
                     <div className="copy-cap valign">
                       <div className="cap">
                         <h1 data-swiper-parallax="-2000">
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
+                          <Link href="/project-details2/project-details2-dark">
                             <a>
                               <div className="stroke">{slide.title.first}</div>
                               <span>{slide.title.second}</span>

@@ -1,19 +1,21 @@
 import React from "react";
-import Link from "next/link";
 import intro5Data from "../../data/sections/intro5.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Parallax } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-import removeSlashFromPagination from "../../common/removeSlashpagination";
 SwiperCore.use([Navigation, Pagination, Parallax]);
 
 const Intro5 = () => {
   const [load, setLoad] = React.useState(true);
   React.useEffect(() => {
-    removeSlashFromPagination()
     setTimeout(() => {
       setLoad(false);
+      if (document.querySelector(".swiper-pagination")) {
+        document.querySelector(".swiper-pagination").innerHTML = document
+          .querySelector(".swiper-pagination")
+          .innerHTML.replace(" / ", "");
+      }
     });
   }, []);
 
@@ -22,7 +24,7 @@ const Intro5 = () => {
   const paginationRef = React.useRef(null);
 
   return (
-    <header id="arch-slider" className="slider arch-slider">
+    <header name="arch-slider" className="slider arch-slider">
       <div className="swiper-container parallax-slider">
         {!load ? (
           <Swiper
@@ -93,12 +95,10 @@ const Intro5 = () => {
                       </div>
                       <div className="col-lg-4 valign">
                         <div className="explore">
-                          <Link href="/project-details2/project-details2-dark"> 
-                          <a >
+                          <a href="#0">
                             Explore Project
                             <i className="ion-chevron-right"></i>
                           </a>
-                          </Link>
                         </div>
                       </div>
                     </div>

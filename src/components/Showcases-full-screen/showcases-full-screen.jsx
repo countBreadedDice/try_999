@@ -13,16 +13,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/mousewheel";
-import removeSlashFromPagination from "../../common/removeSlashpagination";
 
 SwiperCore.use([Navigation, Pagination, Parallax, Mousewheel]);
 
 const ShowcasesFullScreen = () => {
   const [load, setLoad] = React.useState(true);
   React.useEffect(() => {
-    removeSlashFromPagination()
     setTimeout(() => {
       setLoad(false);
+      if (document.querySelector(".swiper-pagination")) {
+        document.querySelector(".swiper-pagination").innerHTML = document
+          .querySelector(".swiper-pagination")
+          .innerHTML.replace(" / ", "");
+      }
     });
   }, []);
 
@@ -88,9 +91,7 @@ const ShowcasesFullScreen = () => {
                       <div className="col-lg-12">
                         <div className="caption">
                           <h1>
-                            <Link
-                              href={`/project-details2/project-details2-dark`}
-                            >
+                            <Link href="/project-details2/project-details2-dark">
                               <a>
                                 <div
                                   className="stroke"
@@ -106,12 +107,10 @@ const ShowcasesFullScreen = () => {
                             <div className="bord"></div>
                           </h1>
                           <div className="discover">
-                            <Link
-                              href={`/works/works-dark`}
-                            >
+                            <Link href="/project-details2/project-details2-dark">
                               <a>
                                 <span>
-                                  Explore <br /> More
+                                 Detali <br /> aici
                                 </span>
                               </a>
                             </Link>
@@ -133,7 +132,7 @@ const ShowcasesFullScreen = () => {
           className="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer"
         >
           <div>
-            <span>Next Slide</span>
+            <span>Următorul proiect</span>
           </div>
           <div>
             <i className="fas fa-chevron-right"></i>
@@ -147,7 +146,7 @@ const ShowcasesFullScreen = () => {
             <i className="fas fa-chevron-left"></i>
           </div>
           <div>
-            <span>Prev Slide</span>
+            <span>Precedentul proiect</span>
           </div>
         </div>
 

@@ -3,15 +3,27 @@ import React from "react";
 import Split from "../Split";
 import Link from "next/link";
 import AboutUs3date from "../../data/sections/about-us3.json";
-import { thumparallax, thumparallaxDown } from "../../common/thumparallax";
 
 const AboutUs3 = () => {
   React.useEffect(() => {
     setTimeout(() => {
-      thumparallax();
-      thumparallaxDown();
+        var imageDown = document.getElementsByClassName("thumparallax-down");
+        var imageUp = document.getElementsByClassName("thumparallax");
+        if (imageDown) {
+          new simpleParallax(imageDown, {
+            orientation: "down",
+            delay: 1,
+            scale: 1.1,
+          });
+        }
+      if (imageUp) {
+        new simpleParallax(imageUp, {
+          delay: 1,
+          scale: 1.1,
+        });
+      }
     }, 1000);
-  }, []);
+  }, [])
   return (
     <section className="agency section-padding position-re">
       <div className="container">
@@ -67,7 +79,7 @@ const AboutUs3 = () => {
                   {AboutUs3date.content.second}
                 </p>
               </Split>
-              <Link href={`/about/about-dark`}>
+              <Link href="/about/about-dark">
                 <a
                   className="butn bord curve mt-40 wow fadeInUp"
                   data-wow-delay=".8s"

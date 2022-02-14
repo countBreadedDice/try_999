@@ -3,9 +3,6 @@ import React from "react";
 import Head from "next/head";
 
 const LightTheme = ({ children }) => {
-  React.useEffect(() => {
-    window.theme = "light";
-  }, []);
   return (
     <>
       <Head>

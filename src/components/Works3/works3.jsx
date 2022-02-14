@@ -10,6 +10,8 @@ import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Tilt from 'react-parallax-tilt';
+
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 const Works3 = () => {
@@ -21,20 +23,7 @@ const Works3 = () => {
         <link rel="stylesheet" href="/css/ionicons.min.css" />
       </Head>
       <section className="work-carousel2 metro section-padding">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 col-md-10">
-              <div className="sec-head">
-                <h6 className="wow fadeIn" data-wow-delay=".5s">
-                  Portfolio
-                </h6>
-                <h3 className="wow color-font">
-                  Our Recent Web Design &amp; <br /> Some Past Projects.
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
+      
 
         <div className="container-fluid">
           <div className="row">
@@ -44,10 +33,7 @@ const Works3 = () => {
                   className="swiper-wrapper"
                   slidesPerView={2}
                   centeredSlides={true}
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
+                  autoPlay={true}
                   loop={true}
                   navigation={{
                     prevEl: navigationPrevRef.current,
@@ -68,6 +54,10 @@ const Works3 = () => {
                       swiper.navigation.init();
                       swiper.navigation.update();
                     });
+                  }}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
                   }}
                   speed={1000}
                   breakpoints={{
@@ -90,161 +80,117 @@ const Works3 = () => {
                   }}
                 >
                   <SwiperSlide className="swiper-slide">
-                    <div className="content">
+                    <div className="content"><Tilt>
                       <div className="img">
-                        <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src="/img/portfolio/2.jpg" alt="" />
+                    <span className="imgio">
+                          <div className="wow cimgio" data-delay="500"></div>
+                          
+                          <img src="/img/portfolio/print3d.jpg" alt="" />
                         </span>
-                      </div>
+                      </div></Tilt>
                       <div className="cont">
                         <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            art &amp; illustration
+                          <Link href="/project-details2/project-details2-dark">
+                            Print 3d
                           </Link>
                         </h6>
                         <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            Inspiring new space
+                          <Link href="/project-details2/project-details2-dark">
+                            Concretizarea conceptului
                           </Link>
                         </h4>
                       </div>
                     </div>
                   </SwiperSlide>
                   <SwiperSlide className="swiper-slide">
-                    <div className="content">
+                    <div className="content"><Tilt>
                       <div className="img">
                         <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src="/img/portfolio/1.jpg" alt="" />
+                          <div className="wow cimgio" data-delay="500"></div>
+                          <img src="/img/portfolio/creatie.jpg" alt="" />
                         </span>
-                      </div>
+                      </div></Tilt>
                       <div className="cont">
                         <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            art &amp; illustration
+                          <Link href="/project-details2/project-details2-dark">
+                           Creație &amp; grafică
                           </Link>
                         </h6>
                         <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            Inspiring new space
+                          <Link href="/project-details2/project-details2-dark">
+                            Inspirație și cercetare
                           </Link>
                         </h4>
                       </div>
                     </div>
                   </SwiperSlide>
                   <SwiperSlide className="swiper-slide">
-                    <div className="content">
+                    <div className="content"><Tilt>
                       <div className="img">
                         <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src="/img/portfolio/3.jpg" alt="" />
+                          <div className="wow cimgio" data-delay="500"></div>
+                          <img src="/img/portfolio/prod.jpg" alt="" />
                         </span>
-                      </div>
+                      </div></Tilt>
                       <div className="cont">
                         <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            art &amp; illustration
+                          <Link href="/project-details2/project-details2-dark">
+                            Producție publicitară
                           </Link>
                         </h6>
                         <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            Inspiring new space
+                          <Link href="/project-details2/project-details2-dark">
+                            Livrarea mesajului tău
                           </Link>
                         </h4>
                       </div>
                     </div>
                   </SwiperSlide>
                   <SwiperSlide className="swiper-slide">
-                    <div className="content">
+                    <div className="content"><Tilt>
                       <div className="img">
                         <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src="/img/portfolio/4.jpg" alt="" />
+                          <div className="wow cimgio" data-delay="500"></div>
+                          <img src="/img/portfolio/promotionale.jpg" alt="" />
                         </span>
-                      </div>
+                      </div></Tilt>
                       <div className="cont">
                         <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            art &amp; illustration
+                          <Link href="/project-details2/project-details2-dark">
+                            Materiale promoționale
                           </Link>
                         </h6>
                         <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            Inspiring new space
+                          <Link href="/project-details2/project-details2-dark">
+                            Pentru cei aproape de tine
                           </Link>
                         </h4>
                       </div>
                     </div>
                   </SwiperSlide>
                   <SwiperSlide className="swiper-slide">
-                    <div className="content">
+                    <div className="content"><Tilt>
                       <div className="img">
                         <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src="/img/portfolio/5.jpg" alt="" />
+                          <div className="wow cimgio" data-delay="500"></div>
+                          <img src="/img/portfolio/webd.jpg" alt="" />
                         </span>
-                      </div>
+                      </div></Tilt>
                       <div className="cont">
                         <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            art &amp; illustration
+                          <Link href="/project-details2/project-details2-dark">
+                            Web design
                           </Link>
                         </h6>
                         <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            Inspiring new space
+                          <Link href="/project-details2/project-details2-dark">
+                            Spațiul tău virtual
                           </Link>
                         </h4>
                       </div>
                     </div>
                   </SwiperSlide>
-                  <SwiperSlide className="swiper-slide">
-                    <div className="content">
-                      <div className="img">
-                        <span className="imgio">
-                          <span className="wow cimgio" data-delay="500"></span>
-                          <img src="/img/portfolio/6.jpg" alt="" />
-                        </span>
-                      </div>
-                      <div className="cont">
-                        <h6>
-                          <Link
-                            href={`/works3/works3-dark`}
-                          >
-                            art &amp; illustration
-                          </Link>
-                        </h6>
-                        <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
-                            Inspiring new space
-                          </Link>
-                        </h4>
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  
                 </Swiper>
 
                 <div

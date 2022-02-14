@@ -13,12 +13,11 @@ const Clients = ({theme}) => {
           <div className="col-lg-4 valign md-mb50">
             <div className="sec-head mb-0">
               <h6 className="wow fadeIn" data-wow-delay=".5s">
-                Best Features
+                Clienții și prietenii noștrii
               </h6>
-              <h3 className="wow mb-20 color-font">Our Clients</h3>
+              <h3 className="wow mb-20 color-font">Clienții</h3>
               <p>
-                Our area of practice is quite wide: design, graphics, branding,
-                development.
+                Succesul vostru este reputația
               </p>
             </div>
           </div>

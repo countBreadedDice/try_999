@@ -1,12 +1,48 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import initIsotope from "../../common/initIsotope";
 
 const WorksStyle3 = () => {
   React.useEffect(() => {
     setTimeout(() => {
-      initIsotope();
+      var iso;
+      var gridMons = document.querySelectorAll(".gallery-mons");
+      if (gridMons.length >= 1) {
+        gridMons.forEach((item) => {
+          iso = new Isotope(item, {
+            itemSelector: ".items",
+            masonry: {
+              columnWidth: ".width2",
+            },
+          });
+        });
+      }
+
+      var filtersElem = document.querySelector(".filtering");
+      if (filtersElem) {
+        filtersElem.addEventListener("click", function (event) {
+          if (!matchesSelector(event.target, "span")) {
+            return;
+          }
+          var filterValue = event.target.getAttribute("data-filter");
+          filterValue = filterValue;
+          iso.arrange({ filter: filterValue });
+        });
+        var buttonGroups = document.querySelectorAll(".filtering");
+        for (var i = 0, len = buttonGroups.length; i < len; i++) {
+          var buttonGroup = buttonGroups[i];
+          radioButtonGroup(buttonGroup);
+        }
+        function radioButtonGroup(buttonGroup) {
+          buttonGroup.addEventListener("click", function (event) {
+            if (!matchesSelector(event.target, "span")) {
+              return;
+            }
+            buttonGroup.querySelector(".active").classList.remove("active");
+            event.target.classList.add("active");
+          });
+        }
+      }
     }, 1000);
   }, []);
   return (
@@ -27,9 +63,7 @@ const WorksStyle3 = () => {
           <div className="gallery-mons full-width">
             <div className="items graphic wow fadeInUp" data-wow-delay=".4s">
               <div className="item-img">
-                <Link
-                  href={`/project-details2/project-details2-dark`}
-                >
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/cr/1.jpg" alt="image" />
                     <div className="item-img-overlay"></div>
@@ -46,9 +80,7 @@ const WorksStyle3 = () => {
 
             <div className="items web brand wow fadeInUp" data-wow-delay=".4s">
               <div className="item-img">
-                <Link
-                  href={`/project-details2/project-details2-dark`}
-                >
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/cr/2.jpg" alt="image" />
                     <div className="item-img-overlay"></div>
@@ -68,9 +100,7 @@ const WorksStyle3 = () => {
               data-wow-delay=".4s"
             >
               <div className="item-img">
-                <Link
-                  href={`/project-details2/project-details2-dark`}
-                >
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/cr/3.jpg" alt="image" />
                     <div className="item-img-overlay"></div>
@@ -90,9 +120,7 @@ const WorksStyle3 = () => {
               data-wow-delay=".4s"
             >
               <div className="item-img">
-                <Link
-                  href={`/project-details2/project-details2-dark`}
-                >
+                <Link href="/project-details2/project-details2-dark">
                   <a className="imago wow">
                     <img src="/img/portfolio/cr/4.jpg" alt="image" />
                     <div className="item-img-overlay"></div>

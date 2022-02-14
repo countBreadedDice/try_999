@@ -1,15 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import aboutSkillsProgress from "../../common/aboutSkillsProgress";
 
 const AboutUs5 = () => {
   React.useEffect(() => {
-    aboutSkillsProgress(
-      document.querySelector(".about-cr .skills-box"),
-      document.querySelectorAll(".skill-progress .progres"),
-      document.querySelector(".about-cr")
-    );
-  }, []);
+    setTimeout(() => {
+      let skillInAbout = document.querySelector(".about-cr .skills-box");
+      if (skillInAbout) {
+        window.addEventListener("scroll", () => {
+          document
+            .querySelectorAll(".skill-progress .progres")
+            .forEach((item) => {
+              let myVal = item.getAttribute("data-value");
+              if (
+                window.pageYOffset >
+                document.querySelector(".about-cr").offsetTop - 200
+              ) {
+                item.style.width = myVal;
+              }
+            });
+        });
+      }
+    }, 1000);
+  }, [])
   return (
     <section className="about-cr">
       <div className="container-fluid">

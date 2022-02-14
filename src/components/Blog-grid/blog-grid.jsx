@@ -18,7 +18,7 @@ const BlogGrid = ({ blogs }) => {
                   <div className="cont">
                     <div>
                       <div className="info">
-                        <Link href="/blog/blog-dark">
+                        <Link href="#0">
                           <a className="date">
                             <span>
                               <i>{blogItem.date.day}</i>
@@ -28,7 +28,7 @@ const BlogGrid = ({ blogs }) => {
                         </Link>
                         <span>/</span>
                         {blogItem.tags.map((tag, index) => (
-                          <Link key={index} href="/blog/blog-dark/">
+                          <Link key={index} href="/">
                             <a className="tag">
                               <span>{tag}</span>
                             </a>
@@ -36,12 +36,12 @@ const BlogGrid = ({ blogs }) => {
                         ))}
                       </div>
                       <h5>
-                        <Link href="/blog-details/blog-details-dark">
+                        <a href="#0">
                           {blogItem.title.substr(0, 55) + "..."}
-                        </Link>
+                        </a>
                       </h5>
                       <div className="btn-more">
-                        <Link href="/blog-details/blog-details-dark">
+                        <Link href="#0">
                           <a className="simple-btn">Read More</a>
                         </Link>
                       </div>
@@ -52,13 +52,13 @@ const BlogGrid = ({ blogs }) => {
             ))}
             <div className="pagination">
               <span className="active">
-                <Link href={`/blog/blog-dark`}>1</Link>
+                <Link href="/blog/blog-dark">1</Link>
               </span>
               <span>
-                <Link href={`/blog/blog-dark`}>2</Link>
+                <Link href="/blog/blog-dark">2</Link>
               </span>
               <span>
-                <Link href={`/blog/blog-blogwindow.theme}`}>
+                <Link href="/blog/blog-dark">
                   <a>
                     <i className="fas fa-angle-right"></i>
                   </a>

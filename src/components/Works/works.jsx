@@ -22,7 +22,7 @@ const Works = () => {
                 className="swiper-wrapper"
                 slidesPerView={2}
                 centeredSlides={true}
-                
+                autoPlay={true}
                 loop={true}
                 navigation={{
                   prevEl: navigationPrevRef.current,
@@ -83,9 +83,7 @@ const Works = () => {
                           <a href="#0">{slide.title}</a>
                         </h6>
                         <h4>
-                          <Link
-                            href={`/project-details2/project-details2-dark`}
-                          >
+                          <Link href="/project-details2/project-details2-dark">
                             {slide.secTex}
                           </Link>
                         </h4>

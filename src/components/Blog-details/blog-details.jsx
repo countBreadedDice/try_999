@@ -1,22 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Link from "next/link";
-import { Formik, Form, Field } from "formik";
-import { Link as ScrollLink } from "react-scroll";
+import Link from 'next/link'
 
 const BlogDetails = ({ theme }) => {
-  const messageRef = React.useRef(null);
-  function validateEmail(value) {
-    let error;
-    if (!value) {
-      error = "Required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = "Invalid email address";
-    }
-    return error;
-  }
-  const sendMessage = (ms) => new Promise((r) => setTimeout(r, ms));
-
   return (
     <section className="blog-pg single section-padding pt-0">
       <div className="container">
@@ -168,11 +154,11 @@ const BlogDetails = ({ theme }) => {
                   <a href="#0">Prev Post</a>
                 </span>
                 <span className="icon">
-                  <Link href={`/blog/blog-dark`}>
+                  <Link href="/blog/blog-dark">
                     <a>
-                      <i className="fas fa-th-large"></i>
+                    <i className="fas fa-th-large"></i>
                     </a>
-                  </Link>
+                    </Link>
                 </span>
                 <span className="text-right">
                   <a href="#0">Next Post</a>
@@ -187,18 +173,12 @@ const BlogDetails = ({ theme }) => {
                   </div>
                   <div className="info">
                     <h6>
-                      Jorden Griffin - <span> 6 Aug 2022</span>
+                      Jorden Griffin - <span> 6 Aug 2019</span>
                     </h6>
                     <span className="replay">
-                      <ScrollLink
-                        to="comment-form"
-                        spy={true}
-                        smooth={true}
-                        offset={-150}
-                        duration={500}
-                      >
+                      <a href="#0">
                         Replay <i className="fas fa-reply"></i>
-                      </ScrollLink>
+                      </a>
                     </span>
                     <p>
                       the main component of a healthy environment for self
@@ -213,18 +193,12 @@ const BlogDetails = ({ theme }) => {
                   </div>
                   <div className="info">
                     <h6>
-                      Jorden Griffin - <span> 6 Aug 2022</span>
+                      Jorden Griffin - <span> 6 Aug 2019</span>
                     </h6>
                     <span className="replay">
-                      <ScrollLink
-                        to="comment-form"
-                        spy={true}
-                        smooth={true}
-                        offset={-150}
-                        duration={500}
-                      >
+                      <a href="#0">
                         Replay <i className="fas fa-reply"></i>
-                      </ScrollLink>
+                      </a>
                     </span>
                     <p>
                       the main component of a healthy environment for self
@@ -239,18 +213,12 @@ const BlogDetails = ({ theme }) => {
                   </div>
                   <div className="info">
                     <h6>
-                      Jorden Griffin - <span> 6 Aug 2022</span>
+                      Jorden Griffin - <span> 6 Aug 2019</span>
                     </h6>
                     <span className="replay">
-                      <ScrollLink
-                        to="comment-form"
-                        spy={true}
-                        smooth={true}
-                        offset={-150}
-                        duration={500}
-                      >
+                      <a href="#0">
                         Replay <i className="fas fa-reply"></i>
-                      </ScrollLink>
+                      </a>
                     </span>
                     <p>
                       the main component of a healthy environment for self
@@ -261,78 +229,44 @@ const BlogDetails = ({ theme }) => {
                 </div>
               </div>
 
-              <div className="comment-form" id="comment-form">
+              <div className="comment-form">
                 <h5>Add Comment :</h5>
                 <div className="form">
-                  <Formik
-                    initialValues={{
-                      name: "",
-                      email: "",
-                      comment: "",
-                    }}
-                    onSubmit={async (values) => {
-                      await sendMessage(500);
-                      alert(JSON.stringify(values, null, 2));
-                      // Reset the values
-                      values.name = "";
-                      values.email = "";
-                      values.comment = "";
-                    }}
-                  >
-                    {({ errors, touched }) => (
-                      <Form>
-                        <div className="row">
-                          <div className="col-12">
-                            <div className="form-group">
-                              <Field
-                                as="textarea"
-                                placeholder="Your Comment"
-                                name="comment"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-group">
-                              <Field
-                                type="text"
-                                placeholder="Your Name"
-                                name="name"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="form-group">
-                              <Field
-                                type="email"
-                                validate={validateEmail}
-                                placeholder="Your Email"
-                                name="email"
-                              />
-                              {errors.email && touched.email && (
-                                <div>{errors.email}</div>
-                              )}
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <div className="form-group text-center">
-                              <button
-                                type="submit"
-                                className={`nb butn ${
-                                  theme
-                                    ? theme === "light"
-                                      ? "dark"
-                                      : ""
-                                    : "light"
-                                } curve full-width`}
-                              >
-                                Comment
-                              </button>
-                            </div>
-                          </div>
+                  <form action="">
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="form-group">
+                          <textarea placeholder="Your Comment"></textarea>
                         </div>
-                      </Form>
-                    )}
-                  </Formik>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input type="text" placeholder="Your Name" />
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="form-group">
+                          <input type="email" placeholder="Your Email" />
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="form-group text-center">
+                          <a
+                            href="#0"
+                            className={`butn ${
+                              theme
+                                ? theme === "light"
+                                  ? "dark"
+                                  : ""
+                                : "light"
+                            } curve full-width`}
+                          >
+                            Comment
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>

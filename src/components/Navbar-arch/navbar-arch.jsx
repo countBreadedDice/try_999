@@ -1,24 +1,46 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Link } from "react-scroll";
-import appData from "../../data/app.json";
-import { handleDropdown, handleMobileDropdown } from "../../common/navbar";
+import link from 'next/link'
+/* eslint-disable @next/next/no-img-element */
 
 const NavbarArch = ({ navbarRef, theme }) => {
-  
+  const handleDropdown = (e) => {
+    getSiblings(e.target.parentElement)
+      .filter((item) => item.classList.contains("show"))
+      .map((item) => {
+        item.classList.remove("show");
+        if (item.childNodes) {
+          if (item.childNodes[0]) {
+            item.childNodes[0].setAttribute("aria-expanded", false);
+          }
+          if (item.childNodes[1]) {
+            item.childNodes[1].classList.remove("show");
+          } 
+        }
+      });
+    e.target.parentElement.classList.toggle("show");
+    e.target.setAttribute("aria-expanded", true);
+    e.target.parentElement.childNodes[1].classList.toggle("show");
+  };
+
+  const handleMobileDropdown = (e) => {
+    document
+      .getElementById("navbarSupportedContent")
+      .classList.toggle("show-with-trans");
+  };
   return (
     <nav className="navbar navbar-expand-lg" ref={navbarRef}>
       <div className="container">
-        <a className="logo" href="/">
+        <a className="logo" href="#">
           {theme ? (
             theme === "themeL" ? (
-              <img src={appData.darkLogo} alt="logo" />
+              <img src="/img/logo-dark.png" alt="logo" />
             ) : (
-              <img src={appData.lightLogo} alt="logo" />
+              <img src="/img/logo-light.png" alt="logo" />
             )
           ) : (
-            <img src={appData.lightLogo} alt="logo" />
+            <img src="/img/logo-light.png" alt="logo" />
           )}
         </a>
 
@@ -48,52 +70,28 @@ const NavbarArch = ({ navbarRef, theme }) => {
                 Home
               </span>
               <div className="dropdown-menu">
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home1-dark`}
-                >
+                <a className="dropdown-item" href="/homepage/home1-dark">
                   Main Home
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home2-dark`}
-                >
+                <a className="dropdown-item" href="/homepage/home2-dark">
                   Creative Agency
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home5-dark`}
-                >
+                <a className="dropdown-item" href="/homepage/home5-dark">
                   Digital Agency
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home4-dark`}
-                >
+                <a className="dropdown-item" href="/homepage/home4-dark">
                   Business One Page
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home3-dark`}
-                >
+                <a className="dropdown-item" href="/homepage/home3-dark">
                   Corporate Business
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home6-dark`}
-                >
+                <a className="dropdown-item" href="/homepage/home6-dark">
                   Modern Agency
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home7-dark`}
-                >
+                <a className="dropdown-item" href="/homepage/home7-dark">
                   Freelancer
                 </a>
-                <a
-                  className="dropdown-item"
-                  href={`/homepage/home8-dark`}
-                >
+                <a className="dropdown-item" href="/homepage/home8-dark">
                   Architecture
                 </a>
               </div>
@@ -138,7 +136,7 @@ const NavbarArch = ({ navbarRef, theme }) => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="testimonials-arch"
+                to="testimonials-archo"
                 spy={true}
                 smooth={true}
                 offset={50}
@@ -150,7 +148,7 @@ const NavbarArch = ({ navbarRef, theme }) => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="blog-arch"
+                to="blog-archo"
                 spy={true}
                 smooth={true}
                 offset={50}
@@ -162,7 +160,7 @@ const NavbarArch = ({ navbarRef, theme }) => {
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to="contact-arch"
+                to="contact-archo"
                 spy={true}
                 smooth={true}
                 offset={50}

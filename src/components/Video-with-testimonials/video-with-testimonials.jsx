@@ -35,6 +35,7 @@ const VideoWithTestimonials = () => {
                   {typeof window !== "undefined" && (
                     <ModalVideo
                       channel="vimeo"
+                      autoplay
                       isOpen={isOpen}
                       videoId="127203262"
                       onClose={() => setOpen(false)}

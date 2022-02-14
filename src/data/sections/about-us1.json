@@ -1,11 +1,11 @@
 {
   "id": 1,
-  "smallTitle": "About Us",
-  "title": "Our Comapny",
-  "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
-  "image": "/img/feat.jpg",
+  "smallTitle": "Bună. noi suntem,",
+  "title": "CSC Design",
+  "content": "CSC Design este agenția de publicitate de lângă tine, înființată din pasiune pentru design grafic, artă, marketing și publicitate. Ofertele noastre sunt mereu adaptate nevoilor clienților noștrii, iar consilierea specializată reprezintă o constantă a tuturor colaborărilor pe ca re le avem. Am investit în tehnologii de ultimă generație, pentru ca ideile creative și unice să devină realitate într-o prezentare superioară. Valoarea echipei noastre este compusă atât din personalul cu experiență în domeniud, cât și din viziunea noastră de dezvoltare pe termen lung. Timpul este un reper important pentru noi. De accea, din respect pentru clien, eficientizăm procesul de realizare a unui proiect, totodată punând pasiune în el. Pentru aceste oferim clienților noștrii servicii complete de publicitate, calibrate pe client și orientate către rezultat",
+  "image": "/img/feat-custom.jpg",
   "stauts": [
-    { "id": 1, "number": "3", "letter": "K", "stautsName": "Happy Clients" },
-    { "id": 2, "number": "14", "letter": "K", "stautsName": "Success Projects" }
+    { "id": 1,  "stautsName": "Agenție Publicitate" },
+    { "id": 2,  "stautsName": "Servicii Creative" }
   ]
 }

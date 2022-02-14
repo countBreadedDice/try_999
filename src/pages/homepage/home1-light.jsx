@@ -9,7 +9,7 @@ import VideoWithTestimonials from "../../components/Video-with-testimonials/vide
 import SkillsCircle from "../../components/Skills-circle/skills-circle";
 import Clients from "../../components/Clients/clients";
 import Blogs1 from "../../components/blogs/Blogs1/blogs1";
-import appData from '../../data/app.json'
+
 import CallToAction from "../../components/Call-to-action/call-to-action";
 import Footer from "../../components/Footer/footer";
 import LightTheme from "../../layouts/Light";
@@ -40,10 +40,10 @@ const Homepage1 = () => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
         navbar.classList.add("nav-scroll");
-        logo.setAttribute("src", appData.darkLogo);
+        logo.setAttribute("src", "/img/logo-dark.png");
       } else {
         navbar.classList.remove("nav-scroll");
-        logo.setAttribute("src", appData.lightLogo);
+        logo.setAttribute("src", "/img/logo-light.png");
       }
     });
   }, [fixedSlider, MainContent, navbarRef]);
